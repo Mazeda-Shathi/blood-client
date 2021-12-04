@@ -1,47 +1,61 @@
-// import Button from "@restart/ui/esm/Button";
-// import { useState } from "react";
-// import { useHistory } from "react-router";
-// import { Link } from "react-router-dom";
-// import UseAuth from "../hook/UseAuth"
-
-// const Register = () => {
-//     const history = useHistory();
-//     const { user, signInUsingGoogle, newUser } = UseAuth();
-//     const [email, setEmail] = useState({});
-//     const [pass, setPass] = useState({});
-//     const handleEmail = (e) => {
-//         setEmail(e.target.value);
-//     }
-//     const handlePassword = (e) => {
-//         setPass(e.target.value);
-//     }
-//     const registration = (e) => {
-//         e.preventDefault();
-//         newUser(email, pass);
-
-//         if (user.email) {
-//             history.push('/home')
-//         }
-//     }
 
 
-//     return (
-//         <div className="mt-5 pt-5">
-//             <h2>Register</h2>
-//             <form onSubmit="">
-//                 <input onBlur={handleEmail} type="email" name=" " placeholder="Email" required></input>
-//                 <br />
-//                 <input onBlur={handlePassword} type="password" name=" " placeholder="password" className="my-3" required></input>
-//                 <br />
-//                 <input onClick={registration} type="submit" name=" " value="submit" ></input>
-//                 <br />
-//             </form>
+import { CircularProgress, Grid, Link, TextField, Typography, Button } from "@mui/material";
+import { useState } from "react";
+import UseAuth from "../hook/UseAuth";
 
-//             <p className="fw-bold fs-5 me-3">Already have an account:<Link to='/login' className="text-decoration-none ps-2  me-2 ">Log in</Link></p>
-//             <h4>OR</h4>
-//             <Button className="btn btn-info m-3 " onClick={signInUsingGoogle}>Google sign in</Button>
-//         </div>
-//     );
-// };
 
-// export default Register;
+const Registration = () => {
+    const { registerUser, isLoading, user } = UseAuth()
+    const [logIndata, setLogIndata] = useState({})
+    const handleOnChange = e => {
+
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLogIndata = { ...logIndata };
+        newLogIndata[field] = value;
+        setLogIndata(newLogIndata)
+    }
+    const handleLogInSubmit = e => {
+        console.log(logIndata);
+        registerUser(logIndata.email, logIndata.password)
+        console.log(user);
+        e.preventDefault();
+    }
+    return (
+        <Grid item xs={12} md={6} sx={{ mt: 8 }}>
+            <Typography variant="subtitle1" gutterBottom component="div">
+                Registar
+            </Typography>
+            {!isLoading &&
+                <form onSubmit={handleLogInSubmit}>
+                    <TextField
+                        sx={{ width: "75%", m: 1 }}
+                        id="standard-basic"
+                        label="Your Email"
+                        name="email"
+                        onChange={handleOnChange}
+                        variant="standard"
+                    />
+                    <TextField
+                        sx={{ width: "75%", m: 1 }}
+                        id="standard-basic"
+                        label="Your PassWord"
+                        type="password"
+                        name="password"
+                        onChange={handleOnChange}
+                        variant="standard"
+                    />
+                    <Link to="/login">
+                        <Button>Already Registerd?Please login</Button>
+                    </Link>
+                    <Button variant="contained" type="submit" onClick={handleLogInSubmit}>Please Register</Button>
+
+
+                </form>}
+            {isLoading && <CircularProgress></CircularProgress>}
+        </Grid>
+    );
+};
+
+export default Registration;
