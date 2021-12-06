@@ -11,6 +11,26 @@ const BloodRequest = () => {
             .then(res => res.json())
             .then(data => setrequest(data))
     }, [])
+    const handleProcess = request => {
+        const date = new Date();
+        const processed = { ...request, processdate: date }
+        fetch('http://localhost:3001/history', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(processed)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
+    const handleDelete = id => {
+        fetch(`http://localhost:3001/request/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
     return (
         <div className="mt-5 pt-2">
             <div className="d-flex border round p-2 m-2">
@@ -43,8 +63,8 @@ const BloodRequest = () => {
                                 <td>{request.phone}</td>
                                 <td>{request.email}</td>
                                 <td></td>
-                                <td> <Button variant="contained" style={{ backgroundColor: 'black' }} type="submit">Process</Button></td>
-                                <td><Button variant="contained" style={{ backgroundColor: 'black' }} type="submit">Delete</Button></td>
+                                <td> <Button onClick={() => handleProcess(request)} variant="contained" style={{ backgroundColor: 'black' }} type="submit">Process</Button></td>
+                                <td><Button variant="contained" style={{ backgroundColor: 'black' }} type="submit" onClick={() => handleDelete(request.id)}>Delete</Button></td>
                             </tr>
                         )}
 

@@ -43,7 +43,7 @@ const LogIn = () => {
                     onChange={handleOnChange}
                     variant="standard"
                 />
-                <Link to="/register">
+                <Link to="/registerDonor">
                     <Button>New User?Please Register</Button>
                 </Link>
                 <Button variant="contained" type="submit">Log In</Button>

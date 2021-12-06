@@ -8,9 +8,11 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import DatePicker from '@mui/lab/DatePicker';
 import Navigation from '../Share/Navigation/Navigation';
+import UseAuth from '../hook/UseAuth';
 
 
 const RegisterAsDonor = () => {
+    const { registerUser } = UseAuth()
     const [requestInfo, setRequestInfo] = React.useState({});
     const handleInputBlur = (e) => {
         const type = e.target.name;
@@ -21,6 +23,7 @@ const RegisterAsDonor = () => {
     }
 
     const handleRequestSubmit = e => {
+        registerUser(requestInfo.email, requestInfo.password)
         fetch('http://localhost:3001/donors/', {
             method: 'POST',
             headers: {
@@ -30,7 +33,24 @@ const RegisterAsDonor = () => {
         })
             .then(response => response.json())
             .then(data => console.log(data))
+        const newUser = {
+            email: requestInfo.email,
+            password: requestInfo.password
+
+        }
+        console.log(newUser);
+        fetch('http://localhost:3001/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+
         e.preventDefault();
+
 
     }
 
