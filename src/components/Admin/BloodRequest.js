@@ -6,12 +6,15 @@ import { Table } from 'react-bootstrap';
 const BloodRequest = () => {
     <h2>Blood Request List</h2>
     const [request, setrequest] = useState([]);
+    const [status, setStatus] = useState(false)
     useEffect(() => {
         fetch('http://localhost:3001/request')
             .then(res => res.json())
             .then(data => setrequest(data))
+        setStatus(request.bloodDonationDate ? true : false)
     }, [])
     const handleProcess = request => {
+        setStatus(true);
         const date = new Date();
         const processed = { ...request, processdate: date }
         fetch('http://localhost:3001/history', {
@@ -62,7 +65,7 @@ const BloodRequest = () => {
                                 <td>{request.address}</td>
                                 <td>{request.phone}</td>
                                 <td>{request.email}</td>
-                                <td></td>
+                                <td>{status ? "Processed" : ""}</td>
                                 <td> <Button onClick={() => handleProcess(request)} variant="contained" style={{ backgroundColor: 'black' }} type="submit">Process</Button></td>
                                 <td><Button variant="contained" style={{ backgroundColor: 'black' }} type="submit" onClick={() => handleDelete(request.id)}>Delete</Button></td>
                             </tr>

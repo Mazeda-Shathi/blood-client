@@ -21,13 +21,13 @@ const Donor = () => {
             <Table>
                 <tbody>
                     <h2 className="pt-5 mt-5">Profile</h2>
-                    <tr>Name:{donorProfile?.name}</tr>
-                    <tr>Date of Birth:{donorProfile?.dob}</tr>
-                    <tr>Gender:{donorProfile?.gender}</tr>
-                    <tr>Blood Group:{donorProfile?.bloodgroup}</tr>
-                    <tr>Address:{donorProfile?.adress}</tr>
-                    <tr>Phone:{donorProfile?.phone}</tr>
-                    <tr>Email:{donorProfile?.email}</tr>
+                    <h4 className="text-danger">Name:<span className="text-dark">{donorProfile?.name}</span></h4>
+                    <p>Date of Birth:{donorProfile?.dob}</p>
+                    <p>Gender:{donorProfile?.gender}</p>
+                    <p>Blood Group:{donorProfile?.bloodgroup}</p>
+                    <p>Address:{donorProfile?.adress}</p>
+                    <p>Phone:{donorProfile?.phone}</p>
+                    <p>Email:{donorProfile?.email}</p>
                     <Button variant="contained" type="submit">Update</Button>
                 </tbody>
             </Table>

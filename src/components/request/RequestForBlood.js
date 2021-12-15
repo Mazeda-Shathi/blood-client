@@ -8,7 +8,9 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import Navigation from "../../components/Share/Navigation/Navigation"
 import DatePicker from '@mui/lab/DatePicker';
 const RequestForBlood = () => {
-    const [requestInfo, setRequestInfo] = React.useState({});
+    const date = new Date();
+    const [requestInfo, setRequestInfo] = React.useState({ bloodNeededDate: date });
+    // console.log(date);
     const handleInputBlur = (e) => {
         const type = e.target.name;
         const value = e.target.value;
