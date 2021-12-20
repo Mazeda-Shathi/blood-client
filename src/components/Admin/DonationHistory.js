@@ -28,10 +28,10 @@ const DonationHistory = () => {
                             <td>{history.name}</td>
 
 
-                            <td>{history.blood}</td>
+                            <td>{history.bloodgroup}</td>
 
                             <td>{history.address}</td>
-                            <td>{history.bloodDonationDate} </td>
+                            <td>{history.processDate?.slice(0, 15)} </td>
 
                             <td>{history.phone}</td>
                             <td>{history.email}</td>

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -17,6 +16,7 @@ import LogIn from './components/login/Login'
 import AuthProvider from './components/context/AuthProvider';
 import Navigation from './components/Share/Navigation/Navigation';
 import Registration from './components/register/Registration';
+import AdminRoute from './components/context/AdminRoute/AdminRoute';
 // import AuthProvider from './components/context/AuthProvider';
 
 function App() {
@@ -30,15 +30,17 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="login" element={<LogIn />} />
                         <Route path="register" element={<Registration />} />
-                        <Route path="/" element={<Home />} />
                         <Route path="home" element={<Home />} />
                         <Route path="about" element={<About />} />
                         <Route path="request" element={<RequestForBlood />} />
                         <Route path="registerDonor" element={<RegisterAsDonor />} />
                         <Route path="contact" element={<Contact />} />
-                        <Route element={<PrivateRoute></PrivateRoute>}>
+                        <Route element={<PrivateRoute />}>
                             <Route path="donor" element={<Donor />} />
-                            <Route path="admin" element={<Dashboard />} >
+
+                        </Route>
+                        <Route >
+                            <Route path="/admin" element={<Dashboard />} >
                                 <Route path="donationhistory" element={<DonationHistory />} />
                                 <Route path="makeadmin" element={<MakeAdmin />} />
                                 <Route path="donorlist" element={<DonorList />} />

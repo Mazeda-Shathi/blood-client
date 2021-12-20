@@ -2,6 +2,16 @@ import { Alert, TextField } from '@mui/material';
 import React from 'react';
 import { Button } from '@mui/material';
 const MakeAdmin = () => {
+    const admin = (e) => {
+        fetch(`http://localhost:3001/admin/${e.target.value}`,
+            { method: "PUT" }
+
+        )
+            .then(res => res.json())
+            .then(data => console.log(data)
+            )
+
+    }
     return (
         <div>
             <h2>Make An Admin</h2>
@@ -9,7 +19,7 @@ const MakeAdmin = () => {
                 <TextField
                     label="Email"
                     type="email"
-
+                    onBlur={admin}
                     variant="standard"
                     margin="normal"
                 />
