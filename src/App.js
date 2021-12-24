@@ -16,18 +16,18 @@ import LogIn from './components/login/Login'
 import AuthProvider from './components/context/AuthProvider';
 import Navigation from './components/Share/Navigation/Navigation';
 import Registration from './components/register/Registration';
-import AdminRoute from './components/context/AdminRoute/AdminRoute';
+import KnowMore from './components/KnowMore/KnowMore';
 // import AuthProvider from './components/context/AuthProvider';
 
 function App() {
     return (
-
         <AuthProvider>
             <div className="App">
                 <BrowserRouter>
                     <Navigation />
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="home/:knowmore" element={<KnowMore></KnowMore>}></Route>
                         <Route path="login" element={<LogIn />} />
                         <Route path="register" element={<Registration />} />
                         <Route path="home" element={<Home />} />

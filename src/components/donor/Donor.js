@@ -1,5 +1,4 @@
 
-import { Box } from '@mui/system';
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Navigation from '../Share/Navigation/Navigation';
@@ -28,7 +27,7 @@ const Donor = () => {
                     <h4 className="text-danger">Address:<span className="text-dark">{donorProfile?.adress}</span></h4>
                     <h4 className="text-danger">Phone:<span className="text-dark">{donorProfile?.phone}</span></h4>
                     <h4 className="text-danger">Email:<span className="text-dark">{donorProfile?.email}</span></h4>
-                    {/* <Button variant="contained" type="submit">Update</Button> */}
+                    <Button variant="contained" type="submit">Update</Button>
                 </tbody>
             </Table>
         </div>
