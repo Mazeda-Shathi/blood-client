@@ -17,7 +17,7 @@ const Navigation = () => {
     }, [user.email]
     )
     console.log(admin);
-    // console.log(user);
+    console.log(user);
     return (
         <>
             <div className="p-2 bg-dark">

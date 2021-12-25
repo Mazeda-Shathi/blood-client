@@ -21,9 +21,7 @@ const DonorList = () => {
                             <th>Gender</th>
                             <th>DOB</th>
                             <th>Blood Group</th>
-                            <th>Allergies
-                            </th>
-                            <th>Bleeding Disorder</th>
+
                             <th>Address</th>
                             <th>Phone Number</th>
                             <th>Email</th>
@@ -37,8 +35,7 @@ const DonorList = () => {
                                 <td>{donor.gender}</td>
                                 <td>{donor.dob}</td>
                                 <td>{donor.bloodgroup}</td>
-                                <td>{donor.allergies ? 'Yes' : "No"}</td>
-                                <td>{donor.bleedingdisorder ? 'Yes' : "No"}</td>
+
                                 <td>{donor.adress}</td>
                                 <td>{donor.phone}</td>
                                 <td>{donor.email}</td>

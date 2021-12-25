@@ -24,7 +24,7 @@ const RegisterAsDonor = () => {
 
     const handleRequestSubmit = e => {
         registerUser(requestInfo.email, requestInfo.password)
-        fetch('http://localhost:3001/donors/', {
+        fetch('http://localhost:3001/donors', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ const RegisterAsDonor = () => {
                             id="demo-simple-select"
                             value={requestInfo.blood}
                             label="Blood"
-                            name="blood"
+                            name="bloodGroup"
                             onChange={handleInputBlur}
                         >
                             <MenuItem value="A+">A+</MenuItem>
@@ -133,7 +133,7 @@ const RegisterAsDonor = () => {
                     </FormControl>
                     <br />
 
-                    <FormControl required style={{ width: '50%', marginTop: '18px' }} >
+                    {/* <FormControl required style={{ width: '50%', marginTop: '18px' }} >
                         <InputLabel id="demo-simple-select-label">Have Allergies?</InputLabel>
                         <Select required
                             labelId="demo-simple-select-label"
@@ -161,7 +161,7 @@ const RegisterAsDonor = () => {
                             <MenuItem value='1'>Yes</MenuItem>
                             <MenuItem value="0">No</MenuItem>
                         </Select>
-                    </FormControl>
+                    </FormControl> */}
                     <br />
                     <TextField
                         onBlur={handleInputBlur}
