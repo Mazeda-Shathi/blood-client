@@ -4,7 +4,9 @@ import { Table } from 'react-bootstrap';
 const DonationHistory = () => {
     const [history, sethistory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/history')
+        fetch('http://localhost:3001/donationUpdate', {
+            method: "GET"
+        })
             .then(res => res.json())
             .then(data => sethistory(data))
     }, [])
@@ -13,28 +15,25 @@ const DonationHistory = () => {
             <Table>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Donors Email</th>
+                        <th>Patient Email</th>
                         <th>Blood Group</th>
-                        <th>Address</th>
                         <th>Blood Donation Date</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
                     {history.map(history =>
-
                         <tr>
-                            <td>{history.name}</td>
+                            <td>{history.donor_email}</td>
 
+
+                            <td>{history.patient_email}</td>
 
                             <td>{history.bloodgroup}</td>
+                            <td>{history.donation_date?.slice(0, 10)}</td>
 
-                            <td>{history.address}</td>
-                            <td>{history.processDate?.slice(0, 15)} </td>
 
-                            <td>{history.phone}</td>
-                            <td>{history.email}</td>
+
 
                         </tr>)}
 

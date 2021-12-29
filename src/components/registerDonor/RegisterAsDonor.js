@@ -23,8 +23,10 @@ const RegisterAsDonor = () => {
     }
 
     const handleRequestSubmit = e => {
+        alert("Thanks for joining us")
         registerUser(requestInfo.email, requestInfo.password)
         fetch('http://localhost:3001/donors', {
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -133,42 +135,37 @@ const RegisterAsDonor = () => {
                     </FormControl>
                     <br />
 
-                    {/* <FormControl required style={{ width: '50%', marginTop: '18px' }} >
-                        <InputLabel id="demo-simple-select-label">Have Allergies?</InputLabel>
-                        <Select required
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={requestInfo.allergy}
-                            label="Allergies"
-                            name="allergy"
-                            onChange={handleInputBlur}
-                        >
-                            <MenuItem value="1">Yes</MenuItem>
-                            <MenuItem value="0">No</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <br />
-                    <FormControl required style={{ width: '50%', marginTop: '18px' }} >
-                        <InputLabel id="demo-simple-select-label">Bleeding Disorder?</InputLabel>
-                        <Select required
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={requestInfo.bleeding}
-                            label="Bleeding"
-                            name="bleeding"
-                            onChange={handleInputBlur}
-                        >
-                            <MenuItem value='1'>Yes</MenuItem>
-                            <MenuItem value="0">No</MenuItem>
-                        </Select>
-                    </FormControl> */}
+
                     <br />
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="address"
+                        name="street"
                         id="outlined-required"
-                        label="Address"
+                        label="Street"
+                    />
+                    <br />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="area"
+                        id="outlined-required"
+                        label="Area"
+                    />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="upozila"
+                        id="outlined-required"
+                        label="Upozila"
+                    />
+                    <br />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="zila"
+                        id="outlined-required"
+                        label="Zila"
                     />
                     <br />
                     <TextField

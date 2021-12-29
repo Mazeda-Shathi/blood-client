@@ -5,7 +5,7 @@ import { Table } from 'react-bootstrap';
 const Donation = () => {
     const [donation, sethistory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/history')
+        fetch('http://localhost:3001/donationUpdate')
             .then(res => res.json())
             .then(data => sethistory(data))
     }, [])
@@ -33,7 +33,6 @@ const Donation = () => {
 
                             <td>{donation.address}</td>
                             <td>{donation.processDate?.slice(0, 15)} </td>
-
                             <td>{donation.phone}</td>
                             <td>{donation.email}</td>
 

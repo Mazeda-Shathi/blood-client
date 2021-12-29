@@ -17,6 +17,8 @@ import AuthProvider from './components/context/AuthProvider';
 import Navigation from './components/Share/Navigation/Navigation';
 import Registration from './components/register/Registration';
 import KnowMore from './components/KnowMore/KnowMore';
+import DonationUpdate from './components/DonationUpdate';
+import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 // import AuthProvider from './components/context/AuthProvider';
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
                         <Route path="contact" element={<Contact />} />
                         <Route element={<PrivateRoute />}>
                             <Route path="donor" element={<Donor />} />
+                            <Route path="updateProfile" element={<UpdateProfile />} />
 
                         </Route>
                         <Route >
@@ -44,7 +47,12 @@ function App() {
                                 <Route path="donationhistory" element={<DonationHistory />} />
                                 <Route path="makeadmin" element={<MakeAdmin />} />
                                 <Route path="donorlist" element={<DonorList />} />
-                                <Route path="bloodrequest" element={<BloodRequest />} />
+                                <Route path="bloodrequest" element={<BloodRequest />} ></Route>
+                                <Route path="donationUpdate" element={<DonationUpdate />} >
+                                </Route>
+
+
+
                             </Route>
                         </Route>
 

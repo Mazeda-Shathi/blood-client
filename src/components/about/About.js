@@ -1,6 +1,7 @@
 
-import { Button, Link } from '@mui/material';
+import { Button } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -24,7 +25,7 @@ const About = () => {
                     We roll up our sleeves and donate time, money and blood. We learn or teach life-saving skills so our communities can be better prepared when the need arises. We do this every day because the Red Cross is needed - every day.
                 </div>
             </div>
-            <Link to='home/knowmore'>  <Button variant="contained" type="submit">Know More</Button></Link>
+            <Link to='knowmore'>  <Button variant="contained" type="submit">Know More</Button></Link>
 
         </div>
     );

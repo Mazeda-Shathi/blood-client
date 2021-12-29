@@ -21,9 +21,10 @@ const DonorList = () => {
                             <th>Gender</th>
                             <th>DOB</th>
                             <th>Blood Group</th>
-
-                            <th>Address</th>
-                            <th>Phone Number</th>
+                            <th>Street</th>
+                            <th>Area</th>
+                            <th>Upozila</th>
+                            <th>Zila</th>
                             <th>Email</th>
                         </tr>
                     </thead>
@@ -33,10 +34,13 @@ const DonorList = () => {
                             <tr>
                                 <td>{donor.name}</td>
                                 <td>{donor.gender}</td>
-                                <td>{donor.dob}</td>
+                                <td>{donor.dob?.slice(0, 10)}</td>
                                 <td>{donor.bloodgroup}</td>
 
-                                <td>{donor.adress}</td>
+                                <td>{donor.street}</td>
+                                <td>{donor.area}</td>
+                                <td>{donor.upozila}</td>
+                                <td>{donor.zila}</td>
                                 <td>{donor.phone}</td>
                                 <td>{donor.email}</td>
 

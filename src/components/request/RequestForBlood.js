@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { MenuItem, Select, Typography, Button, InputLabel, FormControl } from '@mui/material';
+import { MenuItem, Select, Typography, Button, InputLabel, FormControl, Modal } from '@mui/material';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import Button from '@restart/ui/esm/Button';
@@ -21,6 +21,7 @@ const RequestForBlood = () => {
     }
     //date
     const handleRequestSubmit = e => {
+        alert("We have received your request for blood. We will try to manage Donor as soon as possible. Stay connected with Kanika Blood Organisation for further Details.Thanks in advance.")
         fetch('http://localhost:3001/request', {
             method: 'POST',
             headers: {
@@ -35,6 +36,8 @@ const RequestForBlood = () => {
     }
     return (
         <div>
+
+
             <Navigation />
             <Typography variant="h4" gutterBottom component="div"
                 sx={{ mt: 5, pt: 5, color: "red" }}>
@@ -103,7 +106,7 @@ const RequestForBlood = () => {
                         </Select>
                     </FormControl>
                     <br />
-                    <br />
+
                     <LocalizationProvider dateAdapter={AdapterDateFns} >
 
 
@@ -121,15 +124,57 @@ const RequestForBlood = () => {
                         />
                     </LocalizationProvider>
 
+                    <TextField
+                        onBlur={handleInputBlur}
+                        name="bloodAmount"
+                        required
+                        id="outlined-required"
+                        label="Blood Amount(in bag)"
+                    />
+
                     <br />
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="address"
+                        name="upozila"
                         id="outlined-required"
-                        label="Address"
-
+                        label="Upozila"
                     />
+                    <br />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="zila"
+                        id="outlined-required"
+                        label="Zila"
+                    />
+                    <br />
+
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="medical_name"
+                        id="outlined-required"
+                        label="Medical Name"
+                    />
+                    <br />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="medical_area"
+                        id="outlined-required"
+                        label="Medical Area"
+                    />
+                    <br />
+                    <TextField
+                        onBlur={handleInputBlur}
+                        required
+                        name="medical_upozila"
+                        id="outlined-required"
+                        label="Medical Upozila"
+                    />
+                    <br />
+
                     <br />
                     <TextField
                         onBlur={handleInputBlur}
