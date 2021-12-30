@@ -38,8 +38,8 @@ const Donor = () => {
                     <h4 className="text-danger">Blood Group:<span className="text-dark">{donorProfile?.bloodgroup}</span></h4>
                     <h4 className="text-danger">Street:<span className="text-dark">{donorProfile?.street}</span></h4>
                     <h4 className="text-danger">Area:<span className="text-dark">{donorProfile?.area}</span></h4>
-                    <h4 className="text-danger">Upozila:<span className="text-dark">{donorProfile?.upozila}</span></h4>
-                    <h4 className="text-danger">Zila:<span className="text-dark">{donorProfile?.zila}</span></h4>
+                    <h4 className="text-danger">Upazila:<span className="text-dark">{donorProfile?.upozila}</span></h4>
+                    <h4 className="text-danger">Zilla:<span className="text-dark">{donorProfile?.zila}</span></h4>
                     <h4 className="text-danger">Phone:<span className="text-dark">{donorProfile?.phone}</span></h4>
                     <h4 className="text-danger mb-5">Email:<span className="text-dark">{donorProfile?.email}</span></h4>
 

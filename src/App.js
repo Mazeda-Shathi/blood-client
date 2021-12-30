@@ -29,7 +29,7 @@ function App() {
                     <Navigation />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="home/:knowmore" element={<KnowMore></KnowMore>}></Route>
+                        <Route path="knowmore" element={<KnowMore></KnowMore>}></Route>
                         <Route path="login" element={<LogIn />} />
                         <Route path="register" element={<Registration />} />
                         <Route path="home" element={<Home />} />

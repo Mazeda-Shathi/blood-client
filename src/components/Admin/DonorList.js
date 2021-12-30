@@ -24,7 +24,7 @@ const DonorList = () => {
                             <th>Street</th>
                             <th>Area</th>
                             <th>Upazila</th>
-                            <th>Zila</th>
+                            <th>Zilla</th>
                             <th>phone</th>
                             <th>Email</th>
                         </tr>
@@ -40,7 +40,7 @@ const DonorList = () => {
 
                                 <td>{donor.street}</td>
                                 <td>{donor.area}</td>
-                                <td>{donor.upazila}</td>
+                                <td>{donor.upozila}</td>
                                 <td>{donor.zila}</td>
                                 <td>{donor.phone}</td>
                                 <td>{donor.email}</td>

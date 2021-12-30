@@ -135,7 +135,7 @@ const RequestForBlood = () => {
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="upazila"
+                        name="upozila"
                         id="outlined-required"
                         label="Upazila"
                     />
@@ -145,7 +145,7 @@ const RequestForBlood = () => {
                         required
                         name="zila"
                         id="outlined-required"
-                        label="Zila"
+                        label="Zilla"
                     />
                     <br />
 
@@ -170,7 +170,7 @@ const RequestForBlood = () => {
                         required
                         name="medical_upozila"
                         id="outlined-required"
-                        label="Medical Upozila"
+                        label="Medical Upazila"
                     />
                     <br />
 

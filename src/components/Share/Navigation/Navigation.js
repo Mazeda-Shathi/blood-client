@@ -24,7 +24,7 @@ const Navigation = () => {
             <div className="p-2 bg-dark">
                 <Navbar bg="dark" variant="dark" fixed="top" collapseOnSelect expand="lg">
                     <Container>
-                        <Navbar.Brand as={HashLink} to="/home" className=" fs-2">Konika Organization</Navbar.Brand>
+                        <Navbar.Brand as={HashLink} to="/home" className=" fs-2">Kanika Organization</Navbar.Brand>
                         <Nav className="mx-auto text-light">
                             <Nav.Link as={HashLink} to="/home" className=" text-light ">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/request" className=" text-light">Request For Blood</Nav.Link>

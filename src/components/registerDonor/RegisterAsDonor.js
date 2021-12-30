@@ -163,7 +163,7 @@ const RegisterAsDonor = () => {
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="upazila"
+                        name="upozila"
                         id="outlined-required"
                         label="Upazila"
                     />
@@ -173,7 +173,7 @@ const RegisterAsDonor = () => {
                         required
                         name="zila"
                         id="outlined-required"
-                        label="Zila"
+                        label="Zilla"
                     />
                     <br />
                     <TextField

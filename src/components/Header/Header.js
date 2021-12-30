@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import ban1 from "../Share/Navigation/blood 1.jfif"
-import ban2 from "../../components/konika.png"
+
+import ban1 from "../../components/WhatsApp Image 2021-12-30 at 2.31.49 PM.jpeg"
 const Header = () => {
     return (
         <div>
@@ -11,8 +11,8 @@ const Header = () => {
                         className="home img-fluid mt-5 pt-3"
                         src={ban1}
                         alt="First slide"
-                    // height="100%"
-                    // width="80%"
+                        height="100px"
+                        width="50%"
                     />
                     <Carousel.Caption>
                     </Carousel.Caption>

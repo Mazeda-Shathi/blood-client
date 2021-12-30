@@ -72,7 +72,7 @@ const UpdateProfile = () => {
             <Navigation />
             <Typography variant="h4" gutterBottom component="div"
                 sx={{ mt: 5, pt: 5, color: "red" }}>
-                Register as Donor
+                Update Your Profile
             </Typography>
             <Box
                 component="form"
@@ -83,16 +83,19 @@ const UpdateProfile = () => {
                 autoComplete="off"
             >
                 <div>
+                    <small>Name</small>
                     <TextField required
                         value={donorProfile.name}
                         onBlur={handleInputBlur}
                         onChange={handleUpdate}
                         name="name"
+
                         id="outlined-required"
 
                     />
 
                     <br />
+                    <small>Street</small>
                     <TextField
                         value={donorProfile.street}
                         onBlur={handleInputBlur}
@@ -103,6 +106,7 @@ const UpdateProfile = () => {
 
                     />
                     <br />
+                    <small>Area</small>
                     <TextField
                         value={donorProfile.area}
                         onBlur={handleInputBlur}
@@ -112,6 +116,8 @@ const UpdateProfile = () => {
                         id="outlined-required"
 
                     />
+                    <br />
+                    <small>Upozila</small>
                     <TextField
                         value={donorProfile.upozila}
                         onBlur={handleInputBlur}
@@ -122,6 +128,7 @@ const UpdateProfile = () => {
 
                     />
                     <br />
+                    <small>Zilla</small>
                     <TextField
                         value={donorProfile.zila}
                         onBlur={handleInputBlur}
@@ -132,6 +139,7 @@ const UpdateProfile = () => {
 
                     />
                     <br />
+                    <small>Phone</small>
                     <TextField
                         value={donorProfile.phone}
                         onChange={handleUpdate}
@@ -147,8 +155,8 @@ const UpdateProfile = () => {
                     <Button variant="contained" type="submit" onClick={handleRequestSubmit}>Submit</Button>
                 </div>
 
-            </Box>
-        </div>
+            </Box >
+        </div >
     );
 };
 

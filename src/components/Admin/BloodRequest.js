@@ -38,7 +38,7 @@ const BloodRequest = () => {
                             <th>Blood Needed Date</th>
 
                             <th>Upazila</th>
-                            <th>zila</th>
+                            <th>zilla</th>
                             <th>Medical Name</th>
                             <th>Medical Area</th>
                             <th>Medical Upazila</th>
