@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Navigate, Outlet } from 'react-router-dom';
@@ -11,13 +12,13 @@ const Navigation = () => {
     const [admin, setAdmin] = useState({});
     const { user, logOut } = UseAuth();
     useEffect(() => {
-        fetch(`http://localhost:3001/users/${user.email}`)
+        fetch(`http://localhost:3001/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data[0]))
-    }, [user.email]
-    )
-    console.log(admin);
+
+    }, [user])
     console.log(user);
+    console.log(admin);
     return (
         <>
             <div className="p-2 bg-dark">

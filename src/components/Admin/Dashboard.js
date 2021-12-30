@@ -39,6 +39,7 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <List className="dark">
+                <Link to="/home" style={{ textDecoration: 'none', color: 'inherit', padding: "10%" }}><Button>Home</Button></Link><br />
                 <Link to="makeadmin" style={{ textDecoration: 'none', color: 'black', padding: "20%" }}><Button>Make An Admin</Button></Link><br />
                 <Link to="donorlist" style={{ textDecoration: 'none', color: 'black', padding: "10%" }}><Button>Donor List</Button></Link><br />
                 <Link to="bloodrequest" style={{ textDecoration: 'none', color: 'black', padding: "10%" }}><Button>Blood Request</Button></Link><br />

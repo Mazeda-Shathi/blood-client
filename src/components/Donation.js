@@ -32,7 +32,7 @@ const Donation = () => {
                             <td>{donation.bloodgroup}</td>
 
                             <td>{donation.address}</td>
-                            <td>{donation.processDate?.slice(0, 15)} </td>
+                            {/* <td>{donation.processDate?.slice(0, 15)} </td> */}
                             <td>{donation.phone}</td>
                             <td>{donation.email}</td>
 

@@ -15,21 +15,15 @@ const BloodRequest = () => {
     }, [])
     const handleProcess = request => {
         <input>Donors name</input>
-        const date = new Date();
-        // fetch(`http://localhost:3001/request?date=${date}&&email=${request.email}`, {
-        //     method: 'PUT',
 
-        // })
-        //     .then(res => res.json())
-        //     .then(data => console.log(data))
     }
-    const handleDelete = id => {
-        fetch(`http://localhost:3001/request/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
+    // const handleDelete = email => {
+    //     fetch(`http://localhost:3001/request/${request.email}`, {
+    //         method: 'DELETE'
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // }
     return (
         <div className="mt-5 pt-2">
 
@@ -42,17 +36,15 @@ const BloodRequest = () => {
                             <th>Age</th>
                             <th>Blood Group</th>
                             <th>Blood Needed Date</th>
-                            <th>Blood Amount</th>
-                            <th>Upozilla</th>
+
+                            <th>Upazila</th>
                             <th>zila</th>
                             <th>Medical Name</th>
                             <th>Medical Area</th>
-                            <th>Medical Upozila</th>
+                            <th>Medical Upazila</th>
 
                             <th>Phone Number</th>
                             <th>Email</th>
-                            <th>Status</th>
-                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -63,25 +55,22 @@ const BloodRequest = () => {
                                 <td>{item.gender}</td>
                                 <td>{item.age}</td>
                                 <td>{item.bloodgroup}</td>
-
                                 <td>{item.bloodNeededDate?.slice(0, 10)}</td>
-                                <td>{item.bloodAmount}</td>
+
                                 <td>{item.upozila}</td>
                                 <td>{item.zila}</td>
                                 <td>{item.medical_name}</td>
                                 <td>{item.medical_area}</td>
                                 <td>{item.medical_upozila}</td>
-
                                 <td>{item.phone}</td>
                                 <td>{item.email}</td>
-                                <td>{item.processDate ? "Processed" : "Pending"}</td>
                                 <td>
                                     <Link to='/admin/donationUpdate'>
                                         <Button onClick={() => handleProcess(item)} variant="contained" style={{ backgroundColor: 'black' }} type="submit">Process</Button>
                                     </Link>
                                 </td>
 
-                                <td><Button variant="contained" style={{ backgroundColor: 'black' }} type="submit" onClick={() => handleDelete(item.id)}>Delete</Button></td>
+                                {/* <td><Button variant="contained" style={{ backgroundColor: 'black' }} type="submit" onClick={() => handleDelete(item.id)}>Delete</Button></td> */}
                             </tr>
                         )}
 

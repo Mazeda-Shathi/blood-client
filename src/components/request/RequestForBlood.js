@@ -7,7 +7,9 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import Button from '@restart/ui/esm/Button';
 import Navigation from "../../components/Share/Navigation/Navigation"
 import DatePicker from '@mui/lab/DatePicker';
+import { useNavigate } from 'react-router-dom';
 const RequestForBlood = () => {
+    const navigate = useNavigate()
     const date = new Date();
     const [requestInfo, setRequestInfo] = React.useState({ bloodNeededDate: date });
     // console.log(date);
@@ -20,8 +22,8 @@ const RequestForBlood = () => {
         console.log(requestInfo);
     }
     //date
+
     const handleRequestSubmit = e => {
-        alert("We have received your request for blood. We will try to manage Donor as soon as possible. Stay connected with Kanika Blood Organisation for further Details.Thanks in advance.")
         fetch('http://localhost:3001/request', {
             method: 'POST',
             headers: {
@@ -30,7 +32,12 @@ const RequestForBlood = () => {
             body: JSON.stringify(requestInfo)
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                alert(data.sqlMessage ? data.sqlMessage : "We have received your request for blood. We will try to manage Donor as soon as possible. Stay connected with Kanika Blood Organisation for further Details.Thanks in advance.")
+                if (!data.sqlMessage) {
+                    navigate("/home")
+                }
+            })
         e.preventDefault();
 
     }
@@ -124,21 +131,13 @@ const RequestForBlood = () => {
                         />
                     </LocalizationProvider>
 
-                    <TextField
-                        onBlur={handleInputBlur}
-                        name="bloodAmount"
-                        required
-                        id="outlined-required"
-                        label="Blood Amount(in bag)"
-                    />
-
                     <br />
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="upozila"
+                        name="upazila"
                         id="outlined-required"
-                        label="Upozila"
+                        label="Upazila"
                     />
                     <br />
                     <TextField

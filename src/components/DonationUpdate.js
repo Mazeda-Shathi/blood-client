@@ -5,11 +5,12 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import Button from '@restart/ui/esm/Button';
 import DatePicker from '@mui/lab/DatePicker';
-import UseAuth from './hook/UseAuth';
-
+import { useNavigate } from 'react-router-dom';
 const DonationUpdate = () => {
     const date = new Date();
-    const [requestInfo, setRequestInfo] = React.useState({});
+    const navigate = useNavigate();
+    const [requestInfo, setRequestInfo] = useState({});
+    // const [user, setUser] = useState()
     const handleInputBlur = (e) => {
         const type = e.target.name;
         const value = e.target.value;
@@ -26,15 +27,14 @@ const DonationUpdate = () => {
             },
             body: JSON.stringify(requestInfo)
         })
-            .then(response => {
-                //do something with response
-                const users = response.json();
-                this.setState({ users })
-            })
-            .catch(err => {
-                throw new Error(err)
-            })
-
+            .then(response => response.json())
+        console.log(requestInfo);
+        fetch(`http://localhost:3001/donationUpdate/${requestInfo.patient_email}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json)
+        e.preventDefault();
+        navigate('/admin')
     }
     return (
         <div>

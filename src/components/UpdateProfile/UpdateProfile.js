@@ -9,8 +9,10 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import DatePicker from '@mui/lab/DatePicker';
 import Navigation from '../Share/Navigation/Navigation';
 import UseAuth from '../hook/UseAuth';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateProfile = () => {
+    const navigate = useNavigate()
     const { user } = UseAuth();
     const [requestInfo, setRequestInfo] = React.useState({});
     const handleInputBlur = (e) => {
@@ -23,6 +25,7 @@ const UpdateProfile = () => {
 
 
     const handleRequestSubmit = e => {
+
         fetch(`http://localhost:3001/updateProfile/${user.email}`, {
             method: 'PUT',
             headers: {
@@ -31,7 +34,12 @@ const UpdateProfile = () => {
             body: JSON.stringify(donorProfile)
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                alert(data.sqlMessage ? data.sqlMessage : "Your Profile has been Updated")
+                if (!data.sqlMessage) {
+                    navigate("/donor")
+                }
+            })
         e.preventDefault();
 
     }

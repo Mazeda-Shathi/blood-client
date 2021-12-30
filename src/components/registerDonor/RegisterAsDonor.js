@@ -9,9 +9,11 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import DatePicker from '@mui/lab/DatePicker';
 import Navigation from '../Share/Navigation/Navigation';
 import UseAuth from '../hook/UseAuth';
+import { useNavigate } from 'react-router-dom';
 
 
 const RegisterAsDonor = () => {
+    const navigate = useNavigate();
     const { registerUser } = UseAuth()
     const [requestInfo, setRequestInfo] = React.useState({});
     const handleInputBlur = (e) => {
@@ -23,7 +25,7 @@ const RegisterAsDonor = () => {
     }
 
     const handleRequestSubmit = e => {
-        alert("Thanks for joining us")
+
         registerUser(requestInfo.email, requestInfo.password)
         fetch('http://localhost:3001/donors', {
 
@@ -34,7 +36,13 @@ const RegisterAsDonor = () => {
             body: JSON.stringify(requestInfo)
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                alert(data.sqlMessage ? data.sqlMessage : "Thanks for joining us")
+                if (!data.sqlMessage) {
+                    navigate("/home")
+                }
+            })
+
         const newUser = {
             email: requestInfo.email,
             password: requestInfo.password
@@ -155,9 +163,9 @@ const RegisterAsDonor = () => {
                     <TextField
                         onBlur={handleInputBlur}
                         required
-                        name="upozila"
+                        name="upazila"
                         id="outlined-required"
-                        label="Upozila"
+                        label="Upazila"
                     />
                     <br />
                     <TextField

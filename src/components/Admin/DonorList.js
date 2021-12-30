@@ -23,8 +23,9 @@ const DonorList = () => {
                             <th>Blood Group</th>
                             <th>Street</th>
                             <th>Area</th>
-                            <th>Upozila</th>
+                            <th>Upazila</th>
                             <th>Zila</th>
+                            <th>phone</th>
                             <th>Email</th>
                         </tr>
                     </thead>
@@ -39,7 +40,7 @@ const DonorList = () => {
 
                                 <td>{donor.street}</td>
                                 <td>{donor.area}</td>
-                                <td>{donor.upozila}</td>
+                                <td>{donor.upazila}</td>
                                 <td>{donor.zila}</td>
                                 <td>{donor.phone}</td>
                                 <td>{donor.email}</td>
