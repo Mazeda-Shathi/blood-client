@@ -25,8 +25,8 @@ const BloodRequest = () => {
     //         .then(data => console.log(data))
     // }
     return (
-        <div className="mt-5 pt-2">
-
+        <div>
+            <h2 className="pt-5">Blood Request List </h2>
             <div className="d-flex border round p-2 m-2">
                 <Table>
                     <thead>

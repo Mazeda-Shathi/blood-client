@@ -12,6 +12,7 @@ const DonationHistory = () => {
     }, [])
     return (
         <div>
+            <h2 className="mt-5"> Donation information</h2>
             <Table>
                 <thead>
                     <tr>
