@@ -43,7 +43,7 @@ const DonorList = () => {
                                 <td>{donor.upozila}</td>
                                 <td>{donor.zila}</td>
                                 <td>{donor.phone}</td>
-                                <td>{donor.email}</td>
+                                <td>{donor.donor_email}</td>
 
                             </tr>)}
 

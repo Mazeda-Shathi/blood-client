@@ -63,7 +63,7 @@ const BloodRequest = () => {
                                 <td>{item.medical_area}</td>
                                 <td>{item.medical_upozila}</td>
                                 <td>{item.phone}</td>
-                                <td>{item.email}</td>
+                                <td>{item.patient_email}</td>
                                 <td>
                                     <Link to='/admin/donationUpdate'>
                                         <Button onClick={() => handleProcess(item)} variant="contained" style={{ backgroundColor: 'black' }} type="submit">Process</Button>
