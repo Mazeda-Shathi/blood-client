@@ -38,6 +38,7 @@ const DonationUpdate = () => {
     }
     return (
         <div>
+            <h2 className="pt-5 mt-5">Added a New Donation information</h2>
             <Box
                 component="form"
                 sx={{

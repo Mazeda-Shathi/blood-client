@@ -9,19 +9,26 @@ const Contact = () => {
 
             <div className="d-flex justify-content-evenly">
                 <div>
-                    <strong> Physical & Mailing Address</strong>
-                    <p>Konika Blood Donation Organization
-                        <br /> National Headquarters
-                        <br />684-686, Red Crescent Sarak
-                        <br /> Bara Maghbazar, Dhaka 1217
-                        <br /> Postal Address: G.P.O. Box 579</p>
+                    <strong> Address</strong>
+                    <p>
+                        <br /> City Office:-House-Khonik
+                        <br />Holding-1158,Road-7
+                        <br /> Boshundhara R/A.Halishahar
+                        <br />Chaittagong</p>
+                    <strong> Branch</strong>
+                    <p>
+                        <br /> Hathazari Office:Marjan villa,Beside Rail station,1no gate, <br />university of chittagong,4331 chittagong,<br />chittagong division,bangladesh
+                        <br />Holding-1158,Road-7
+                        <br /> Boshundhara R/A.Halishahar
+                        <br />Chattogram</p>
+
                 </div>
                 <div>
                     <p>
                         <strong> Contact Information</strong><br />
-                        Tel: (880) +88 02 48310188 / +88 02 48310189; <br />
-                        Fax: +88 02 9352303 <br />
-                        Email: info@bdrcs.org
+                        Phone:01622-118800 <br />
+                        Email:konikadcc@gmail.com
+                        <br />Facebook:KANIKA (কণিকা-একটি রক্তদাতা সংগঠন)
                     </p>
                 </div>
             </div>

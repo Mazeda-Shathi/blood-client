@@ -19,6 +19,7 @@ import Registration from './components/register/Registration';
 import KnowMore from './components/KnowMore/KnowMore';
 import DonationUpdate from './components/DonationUpdate';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile';
+import Footer from './components/Share/footer/Footer';
 // import AuthProvider from './components/context/AuthProvider';
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                     </Routes>
 
                 </BrowserRouter>
+
             </div>
         </AuthProvider>
 
