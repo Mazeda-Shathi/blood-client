@@ -27,7 +27,7 @@ const RegisterAsDonor = () => {
     const handleRequestSubmit = e => {
 
         registerUser(requestInfo.email, requestInfo.password)
-        fetch('http://localhost:3001/donors', {
+        fetch('http://localhost:4000/donors', {
 
             method: 'POST',
             headers: {
@@ -49,7 +49,7 @@ const RegisterAsDonor = () => {
 
         }
         console.log(newUser);
-        fetch('http://localhost:3001/user', {
+        fetch('http://localhost:4000/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

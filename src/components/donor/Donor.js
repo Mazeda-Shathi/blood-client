@@ -10,7 +10,7 @@ const Donor = () => {
     const { user } = UseAuth();
     const [donorProfile, setDonorProfile] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:3001/donors/${user.email}`)
+        fetch(`http://localhost:4000/donors/${user.email}`)
             .then(res => res.json())
             .then(data => setDonorProfile(data[0]))
     }, [])
@@ -20,7 +20,7 @@ const Donor = () => {
     // for donor donation  
     const [history, sethistory] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3001/donation/${user.email}`)
+        fetch(`http://localhost:4000/donation/${user.email}`)
 
             .then(res => res.json())
             .then(data => sethistory(data[0]))
@@ -41,7 +41,7 @@ const Donor = () => {
                     <h4 className="text-danger">Upazila:<span className="text-dark">{donorProfile?.upozila}</span></h4>
                     <h4 className="text-danger">Zilla:<span className="text-dark">{donorProfile?.zila}</span></h4>
                     <h4 className="text-danger">Phone:<span className="text-dark">{donorProfile?.phone}</span></h4>
-                    <h4 className="text-danger mb-5">Email:<span className="text-dark">{donorProfile?.email}</span></h4>
+                    <h4 className="text-danger mb-5">Email:<span className="text-dark">{donorProfile?.donor_email}</span></h4>
 
                     <Link to="/updateProfile">
                         <Button variant="outlined" type="submit">Update</Button>

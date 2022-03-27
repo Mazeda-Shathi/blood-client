@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 const MakeAdmin = () => {
     const admin = (e) => {
-        fetch(`http://localhost:3001/admin/${e.target.value}`,
+        fetch(`http://localhost:4000/admin/${e.target.value}`,
             { method: "PUT" }
 
         )

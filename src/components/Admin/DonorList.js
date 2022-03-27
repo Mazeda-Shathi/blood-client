@@ -5,7 +5,7 @@ const DonorList = () => {
     <h2>Donor List</h2>
     const [donor, setDonor] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/donors/')
+        fetch('http://localhost:4000/donors/')
             .then(res => res.json())
             .then(data => setDonor(data))
     }, [])

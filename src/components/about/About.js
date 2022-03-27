@@ -2,6 +2,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img3 from '../about/konika1.jpg';
 
 const About = () => {
     return (
@@ -17,7 +18,7 @@ const About = () => {
             </div>
             <div className="mt-5 row p-5">
                 <div className="mt-5 col-lg-6">
-                    <img className="w-100" src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/251749059_3077046279237637_547804973912824109_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=b9115d&_nc_eui2=AeF47JpK8qSsTvy_B15B83cAUQMAB8z9zNhRAwAHzP3M2MDi43KoEJK_Pfe8MDPB4ApSpLj67uRJY8Cz813GEmCw&_nc_ohc=4yRqauANLT4AX9bycZ0&_nc_oc=AQlaDlXM7zKKbnekp9d4iLBff_pZOx7Zp8iCtAWuyTeNRMYuo4iAmBVJ1pnAGp4tBvw&_nc_ht=scontent.fcgp7-1.fna&oh=00_AT-AEW3RH7lAhMG8by6iaBI-q0HU6wI-WL_mx2pSy9TNhw&oe=61D3AAC6" alt=""></img>
+                    <img className="w-100" src={img3} alt=""></img>
                 </div >
                 <div className="mt-5 col-lg-6 d-flex align-items-center">
                     Each day, thousands of people – people just like you – provide compassionate care to those in need. Our network of generous donors, volunteers and employees share a mission of preventing and relieving suffering, here at home and around the world.

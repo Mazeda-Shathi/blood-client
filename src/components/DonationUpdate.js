@@ -20,7 +20,7 @@ const DonationUpdate = () => {
     }
 
     const handleSubmit = e => {
-        fetch('http://localhost:3001/donationUpdate', {
+        fetch('http://localhost:4000/donationUpdate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,10 +29,16 @@ const DonationUpdate = () => {
         })
             .then(response => response.json())
         console.log(requestInfo);
-        fetch(`http://localhost:3001/donationUpdate/${requestInfo.patient_email}`, {
+        fetch(`http://localhost:4000/donationUpdate/${requestInfo.patient_email}`, {
             method: 'DELETE'
         })
             .then(res => res.json)
+            .then(data => {
+                alert(data.sqlMessage ? data.sqlMessage : "Information has been updated")
+                if (!data.sqlMessage) {
+                    navigate("/home")
+                }
+            })
         e.preventDefault();
         navigate('/admin')
     }

@@ -20,7 +20,7 @@ const UseFirebase = () => {
                 const newUser = {
                     email: email
                 }
-                fetch('http://localhost:3001/user', {
+                fetch('http://localhost:4000/user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

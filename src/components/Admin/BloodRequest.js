@@ -8,7 +8,7 @@ const BloodRequest = () => {
     <h2>Blood Request List</h2>
     const [request, setrequest] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/request')
+        fetch('http://localhost:4000/request')
             .then(res => res.json())
             .then(data => setrequest(data))
 
@@ -18,7 +18,7 @@ const BloodRequest = () => {
 
     }
     // const handleDelete = email => {
-    //     fetch(`http://localhost:3001/request/${request.email}`, {
+    //     fetch(`http://localhost:4000/request/${request.email}`, {
     //         method: 'DELETE'
     //     })
     //         .then(res => res.json())

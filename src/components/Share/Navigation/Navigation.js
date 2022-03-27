@@ -12,7 +12,7 @@ const Navigation = () => {
     const [admin, setAdmin] = useState({});
     const { user, logOut } = UseAuth();
     useEffect(() => {
-        fetch(`http://localhost:3001/users/${user?.email}`)
+        fetch(`http://localhost:4000/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data[0]))
 

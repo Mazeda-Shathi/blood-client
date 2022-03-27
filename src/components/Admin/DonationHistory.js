@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 const DonationHistory = () => {
     const [history, sethistory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/donationUpdate', {
+        fetch('http://localhost:4000/donationUpdate', {
             method: "GET"
         })
             .then(res => res.json())

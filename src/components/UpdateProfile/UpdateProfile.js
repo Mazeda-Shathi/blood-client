@@ -26,7 +26,7 @@ const UpdateProfile = () => {
 
     const handleRequestSubmit = e => {
 
-        fetch(`http://localhost:3001/updateProfile/${user.email}`, {
+        fetch(`http://localhost:4000/updateProfile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const UpdateProfile = () => {
     //profile
     const [donorProfile, setDonorProfile] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3001/donors/${user.email}`)
+        fetch(`http://localhost:4000/donors/${user.email}`)
             .then(res => res.json())
             .then(data => setDonorProfile(data[0]))
     }, [])
